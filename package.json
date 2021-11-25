@@ -1,0 +1,42 @@
+{
+  "name": "canvue",
+  "version": "1.0.0",
+  "repository": "https://github.com/vue3d/Canvue.git",
+  "author": "LC7457 <lichao7457@gmail.com>",
+  "license": "ISC",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "jsnext:main": "dist/index.mjs",
+  "umd:main": "dist/index.umd.js",
+  "source": "src/index.ts",
+  "typings": "index.d.ts",
+  "exports": {
+    "import": "./dist/index.mjs",
+    "require": "./dist/index.js",
+    "default": "./dist/index.mjs"
+  },
+  "scripts": {
+    "dev": "microbundle watch -f es,cjs,umd",
+    "build": "microbundle -f es,cjs,umd"
+  },
+  "files": [
+    "dist",
+    "index.d.ts"
+  ],
+  "eslintIgnore": [
+    "dist",
+    "index.d.ts"
+  ],
+  "dependencies": {
+    "js-base64": "^3.7.2",
+    "konva": "^8.3.0",
+    "mitt": "^3.0.0",
+    "vue": "^3.2.0"
+  },
+  "devDependencies": {
+    "esm": "^3.2.25",
+    "microbundle": "^0.14.2",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.2"
+  }
+}
