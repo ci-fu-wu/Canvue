@@ -1,4 +1,8 @@
+import {h, ref} from 'vue'
+
 export default {
-    setup() {
-    }
+    setup(props, {attrs, slots, expose}) {
+        const container = ref(null);
+        return () => h('div', {ref: container}, slots.default?.());
+    },
 }

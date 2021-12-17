@@ -1,5 +1,5 @@
 import Canvue from "./canvue";
-import GlobalComponents from './components'
+import InstallComponents from "./components";
 
 export default {
     /**
@@ -9,7 +9,7 @@ export default {
      */
     install: (app, options) => {
         const canvue = new Canvue(options)
-        GlobalComponents(app, options)
+        InstallComponents(app, options?.prefix ?? 'v')
 
         if (app?.config?.globalProperties) {
             app.config.globalProperties.$canvue = canvue
