@@ -1,6 +1,18 @@
 import {App} from "vue";
 import {CanvueOptions} from "./types";
-import canvue from "./canvue";
+import InstallComponents from "./components";
+import event from './event'
+
+/**
+ * Canvue
+ */
+class Canvue {
+    event // 事件总线
+
+    constructor(options) {
+        this.event = event
+    }
+}
 
 export default {
     /**
@@ -10,17 +22,13 @@ export default {
      * @param {CanvueOptions} options
      */
     install(Vue: App, options: CanvueOptions): void {
-
+        const canvue = new Canvue(options)
+        InstallComponents(Vue, options?.prefix ?? 'v')
+        // 全局注入
+        // 可以通过this.$$canvue获取到canvue类的实例
         Vue.config.globalProperties.$canvue = canvue
-        // // 留着备用，为了兼容$Lazyload
-        // // 选项api，可以通过this.$Lazyload获取到Lazy类的实例，组合api我还不知道怎么获取
-        // // 所以通过 provide 来实现此需求
-        // // 使用方式 const useLazylaod = inject('Lazyload')
+        // 组件注入
+        // 使用方式 const useCanvue = inject('canvue')
         Vue.provide('canvue', canvue)
-        // Vue.directive('lazy', {
-        //     mounted: lazy.mount.bind(lazy),
-        //     updated: lazy.update.bind(lazy),
-        //     unmounted: lazy.unmount.bind(lazy)
-        // })
     }
 }

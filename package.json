@@ -4,28 +4,31 @@
   "repository": "https://github.com/vue3d/Canvue.git",
   "author": "LC7457 <lichao7457@gmail.com>",
   "license": "ISC",
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
-  "jsnext:main": "dist/index.mjs",
-  "umd:main": "dist/index.umd.js",
   "source": "src/index.ts",
-  "typings": "index.d.ts",
+  "main": "libs/canvue.js",
+  "module": "libs/canvue.mjs",
+  "jsnext:main": "libs/canvue.mjs",
+  "umd:main": "libs/canvue.umd.js",
+  "typings": "types/canvue.d.ts",
   "exports": {
-    "import": "./dist/index.mjs",
-    "require": "./dist/index.js",
-    "default": "./dist/index.mjs"
+    "import": "./libs/canvue.mjs",
+    "require": "./libs/canvue.js",
+    "default": "./libs/canvue.mjs"
   },
   "scripts": {
     "dev": "microbundle watch -f es,cjs,umd",
-    "build": "microbundle -f es,cjs,umd"
+    "bundle": "microbundle -f es,cjs,umd",
+    "clean": "rm -rf ./libs && rm -rf ./types && rm -rf ./cmj && rm -rf ./test-build"
   },
   "files": [
-    "dist",
-    "index.d.ts"
+    "libs",
+    "types",
+    "canvue.d.ts"
   ],
   "eslintIgnore": [
-    "dist",
-    "index.d.ts"
+    "libs",
+    "types",
+    "canvue.d.ts"
   ],
   "dependencies": {
     "js-base64": "^3.7.2",
@@ -36,7 +39,8 @@
   "devDependencies": {
     "esm": "^3.2.25",
     "microbundle": "^0.14.2",
+    "rollup-plugin-typescript2": "^0.31.1",
     "ts-node": "^10.4.0",
-    "typescript": "^4.5.2"
+    "typescript": "^4.5.4"
   }
 }

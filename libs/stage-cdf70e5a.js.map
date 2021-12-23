@@ -1,0 +1,1 @@
+{"version":3,"file":"stage-cdf70e5a.js","sources":["../src/components/stage.ts"],"sourcesContent":["export default {\r\n    setup() {\r\n    }\r\n}\r\n"],"names":["setup"],"mappings":"AAAA,MAAe,CACXA"}

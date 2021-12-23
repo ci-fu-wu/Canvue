@@ -1,0 +1,1 @@
+{"version":3,"file":"layer-f0b61fe6.js","sources":["../src/components/layer.ts"],"sourcesContent":["export default {\r\n    setup() {\r\n    }\r\n}\r\n"],"names":["setup"],"mappings":"AAAA,MAAe,CACXA"}

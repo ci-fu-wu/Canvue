@@ -1,11 +1,7 @@
+import {LifecycleEnum} from './enum'
+
 export interface CanvueOptions {
-
-}
-
-export enum LifecycleEnum {
-    LOADING = 'loading',
-    LOADED = 'loaded',
-    ERROR = 'error'
+    prefix: string
 }
 
 export type Lifecycle = {
