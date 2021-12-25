@@ -1,2 +1,0 @@
-import e from"mitt";var n=[{name:"Stage",component:import("./stage-cdf70e5a.js")},{name:"Layer",component:import("./layer-f0b61fe6.js")}],o=e(),t=function(e){this.event=void 0,this.event=o},a={install:function(e,o){var a,i,r,c=new t(o);i=e,void 0===(r=null!=(a=null==o?void 0:o.prefix)?a:"v")&&(r="v"),n.forEach(function(e){i.component(""+r+e.name,e.component)}),e.config.globalProperties.$canvue=c,e.provide("canvue",c)}};export{a as default};
-//# sourceMappingURL=canvue.mjs.map

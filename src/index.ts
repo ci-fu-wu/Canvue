@@ -23,7 +23,7 @@ export default {
      */
     install(Vue: App, options: CanvueOptions): void {
         const canvue = new Canvue(options)
-        InstallComponents(Vue, options?.prefix ?? 'v')
+        InstallComponents(Vue, options?.prefix ?? 'V')
         // 全局注入
         // 可以通过this.$$canvue获取到canvue类的实例
         Vue.config.globalProperties.$canvue = canvue

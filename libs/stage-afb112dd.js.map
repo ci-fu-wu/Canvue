@@ -1,1 +1,0 @@
-{"version":3,"file":"stage-afb112dd.js","sources":["../src/components/stage.ts"],"sourcesContent":["export default {\r\n    setup() {\r\n    }\r\n}\r\n"],"names":["setup"],"mappings":"gBAAe,CACXA"}
