@@ -1,40 +1,59 @@
 {
   "name": "@lc7457/canvue",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "repository": "https://github.com/vue3d/Canvue.git",
   "author": "LC7457 <lichao7457@gmail.com>",
   "license": "ISC",
-  "source": "src/index.ts",
-  "main": "libs/canvue.js",
-  "module": "libs/canvue.m.js",
-  "typings": "types/canvue.d.ts",
+  "main": "./dist/canvue.umd.js",
+  "module": "./dist/canvue.es.js",
   "exports": {
-    "default": "./libs/canvue.m.js",
-    "import": "./libs/canvue.m.js",
-    "require": "./libs/canvue.js"
-  },
-  "scripts": {
-    "dev": "microbundle watch",
-    "bundle": "microbundle"
+    ".": {
+      "import": "./dist/canvue.es.js",
+      "require": "./dist/canvue.umd.js"
+    },
+    "./dist/style.css": "./dist/style.css"
   },
   "files": [
-    "libs",
-    "types"
+    "dist"
   ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lib": "vite build --config vite-lib.config.ts && tsc --project tsconfig.lib.json",
+    "serve": "vite preview",
+    "test": "jest --watch",
+    "coverage": "jest --coverage",
+    "release": "standard-version"
+  },
   "eslintIgnore": [
     "libs",
     "types"
   ],
   "dependencies": {
-    "js-base64": "^3.7.2",
     "konva": "^8.3.0",
     "mitt": "^3.0.0",
     "vue": "^3.2.0"
   },
   "devDependencies": {
-    "esm": "^3.2.25",
-    "microbundle": "^0.14.2",
+    "@vue/cli-plugin-babel": "~4.5.15",
+    "@vue/cli-plugin-typescript": "4.5.15",
+    "@vue/cli-service": "~4.5.15",
+    "@vue/compiler-sfc": "^3.2.0",
+    "@typescript-eslint/eslint-plugin": "^4.23.0",
+    "@typescript-eslint/parser": "^4.23.0",
+    "@types/jest": "^26.0.23",
+    "@types/string-hash": "^1.1.1",
+    "@types/resize-observer-browser": "^0.1.6",
+    "typescript": "^4.5.4",
+    "core-js": "^3.20.0",
+    "ts-jest": "^27.1.2",
     "ts-node": "^10.4.0",
-    "typescript": "^4.5.4"
+    "tslib": "^2.3.1",
+    "vite": "^2.7.9",
+    "standard-version": "^9.3.2",
+    "string-hash": "^1.1.3",
+    "eslint": "^7.32.0",
+    "eslint-plugin-tsdoc": "^0.2.14",
+    "@vitejs/plugin-vue": "^2.0.1"
   }
 }
