@@ -1,27 +1,31 @@
 import {App} from "vue";
 import {CanvueOptions} from "./types";
-import {Stage, Layer} from "./components";
+import {InstallComponents} from "./components";
 import event from './event'
+import {Stage} from "konva/lib/Stage";
 
 /**
  * Canvue
  */
 class Canvue {
-    private _index // stage 实例索引
-    event // 事件总线
+    public index: number // stage 当前实例索引
+    public event // 事件总线
 
-    get stage(): number {
-        return this._index;
+    private _stages: Stage[] // 实例组
+
+    stageNum(): number {
+        return this._stages.length;
     }
 
-    newStage(): number {
-        this._index++;
-        return this._index;
+    stageAdd(stage: Stage): number {
+        this._stages.push(stage)
+        return this._stages.length;
     }
 
     constructor(options: CanvueOptions) {
         this.event = event
-        this._index = 0
+        this.index = 0
+        this._stages = []
     }
 }
 
@@ -45,16 +49,4 @@ export default {
     }
 }
 
-// export {Stage, Layer}
-
-// Components
-const components = [
-    {name: 'Stage', component: Stage},
-    {name: 'Layer', component: Layer},
-]
-
-function InstallComponents(app: App, prefix: string = 'V') {
-    components.forEach((com) => {
-        app.component(`${prefix}${com.name}`, com.component);
-    });
-}
+export {Canvue}
